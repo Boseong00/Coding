@@ -2,14 +2,20 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Box from './Box' 
 
 function App() {
-  return (
+  let count = 0;
+  const [count2,setCount2] = useState(0); 
+  const increase = () => {
+    count = count + 1;
+    setCount2(count2 + 1);
+    console.log(count,count2);
+  }
+    return (
     <main>
-      <Box name="김보성" num="1"/>
-      <Box name="코알누" num="2"/>
-      <Box name="수경이" num="3"/>
+      <div>{count}</div>
+      <div>state:{count2}</div>
+      <button onClick={increase}>증가</button>
     </main>
   )
 }

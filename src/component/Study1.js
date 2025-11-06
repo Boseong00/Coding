@@ -1,6 +1,3 @@
-import { useState } from 'react';
-import './App.css';
-
 function Input1({value, onChange, name, placeholder, type='text'}) {
   return(
     <input
@@ -38,7 +35,9 @@ function App() {
       <Input1 name="a" value={a} onChange={(e) => setA(e.target.value)} placeholder="값 1" type='number'/>
       <Input1 name="b" value={b} onChange={(e) => setB(e.target.value)} placeholder="값 2" type='number'/>
       <button onClick={handleCalc}>계산</button>
-      <div>합계 : {result ?? ''}</div>
+      <div>
+          {result !== null && <div>합계: {result}</div>}
+        </div>
     </div>
   );
 }
